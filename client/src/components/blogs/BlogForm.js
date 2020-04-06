@@ -1,10 +1,10 @@
 // BlogForm shows a form for a user to add input
-import _ from 'lodash';
-import React, { Component } from 'react';
-import { reduxForm, Field } from 'redux-form';
-import { Link } from 'react-router-dom';
-import BlogField from './BlogField';
-import formFields from './formFields';
+import _ from "lodash";
+import React, { Component } from "react";
+import { reduxForm, Field } from "redux-form";
+import { Link } from "react-router-dom";
+import BlogField from "./BlogField";
+import formFields from "./formFields";
 
 class BlogForm extends Component {
   renderFields() {
@@ -44,7 +44,7 @@ function validate(values) {
 
   _.each(formFields, ({ name }) => {
     if (!values[name]) {
-      errors[name] = 'You must provide a value';
+      errors[name] = "You must provide a value";
     }
   });
 
@@ -53,6 +53,6 @@ function validate(values) {
 
 export default reduxForm({
   validate,
-  form: 'blogForm',
-  destroyOnUnmount: false
+  form: "blogForm",
+  destroyOnUnmount: false,
 })(BlogForm);
